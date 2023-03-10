@@ -151,3 +151,12 @@ FROM Orders;
 SELECT status, amount, count_order, manufacter,-- Перед "IF" тоже ставится запятая
     IF(amount * count_order >= 3000, 'Cтраховка включена в стоимость', 'Страховка оплачивается отдельно') AS info_message
 FROM Orders;
+
+-- ORDER BY
+SELECT * 
+FROM Orders
+ORDER BY amount DESC -- сортировка по сумме по убыванию DESC
+LIMIT 3;
+-- уникальные производители
+SELECT DISTINCT manufacter
+FROM Orders;
